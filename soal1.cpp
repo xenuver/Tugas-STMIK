@@ -7,7 +7,7 @@ int main()
     string golongan;
     char npwp;
     double pajak = 0;
-    int sks, gajipersks, gaji;
+    int sks, gajipersks, gaji, gajibersih;
 
     cout << "Program menghitung honor per sks berdasarkan golongan" << endl;
     cout << "===================================================== \n" << endl;
@@ -23,6 +23,9 @@ int main()
     cout << "Inputkan Jumlah Sks             : ";
     cin >> sks;
 
+    cout << "Apakah Anda Memiliki NPWP [Y,N] : ";
+    cin >> npwp;
+
     if (golongan == "Lektor Kepala") {
         gajipersks = 40000;
         gaji = gajipersks * sks;
@@ -33,25 +36,24 @@ int main()
         gajipersks = 33000;
         gaji = gajipersks * sks;
     } else if (golongan == "Dosen") {
-        cout << "Apakah Anda Memiliki NPWP [Y,N] : ";
-        cin >> npwp;
+        gajipersks = 28000;
+        gaji = gajipersks * sks;
+    }
 
-        if (npwp == 'Y') {
-            gajipersks = 28000;
-            pajak = (gajipersks * sks) * 0.025;
-            gaji = gajipersks * sks + pajak;
-        } else if (npwp == 'N') {
-            gajipersks = 28000;
-            pajak = (gajipersks * sks) * 0.03;
-            gaji = gajipersks * sks + pajak;
-        }
+    if (npwp == 'Y') {
+        pajak = gaji * 0.025;
+        gajibersih = gajipersks * sks + pajak;
+    } else if (npwp == 'N') {
+        pajak = gaji * 0.03;
+        gajibersih = gajipersks * sks + pajak;
     }
 
     cout << endl << "=====================================================\n" << endl;
     cout << "Honor Per sks Sebesar : " << gajipersks << endl;
     cout << "Total Sks             : " << sks << endl;
+    cout << "Gaji Sebelum Pajak    : " << gaji << endl;
     cout << "Total Pajak           : " << pajak << endl;
-    cout << "Total Gaji            : " << gaji << endl;
+    cout << "Total Gaji            : " << gajibersih     << endl;
 
 
     return 0;
