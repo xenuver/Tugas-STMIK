@@ -11,13 +11,13 @@ int main()
     int x = 1;
 
     do {
-        cout << "Inputkan Bararng ke-" << x << endl;
+        cout << "Inputkan Barang ke-" << x << endl;
         cout << "     Harga Satuan : ";
         cin >> harga_satuan;
         cout << "     Kuantitas    : ";
         cin >> kuantitas;
         cout << " " << endl;
-        total_harga += harga_satuan;
+        total_harga += harga_satuan * kuantitas;
         x++;
 
 
@@ -28,7 +28,7 @@ int main()
 
     cout << " " << endl;
     cout << "====================================\n" << endl;
-    cout << "Total Harganya Adalah : RP " << total_harga << endl;
+    cout << "Total Harganya Adalah : Rp. " << total_harga << endl;
 
     return 0;
 }
