@@ -7,7 +7,8 @@ int main()
     cout << "Program Untuk Menghitung Rata-rata Tinggi Badan Siswa" << endl;
     cout << "=====================================================\n" << endl;
 
-    int jmlh_siswa, tinggi_badan, tinggi_terendah, rata_tinggi, jumlah_tinggi;
+    int jmlh_siswa, tinggi_badan, tinggi_terendah;
+    double rata_tinggi, jumlah_tinggi;
 
     cout << "Inputkan Jumlah siswa dalam kelas : "; cin >> jmlh_siswa;
 
@@ -15,6 +16,7 @@ int main()
     cin >> tinggi_badan;
     tinggi_terendah = tinggi_badan;
     jumlah_tinggi = tinggi_badan;
+    rata_tinggi = jumlah_tinggi / jmlh_siswa;
 
     for(int x = 2; x <= jmlh_siswa; x++) {
         cout << "Inputkan Tinggi Badan : ";
